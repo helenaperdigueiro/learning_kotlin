@@ -175,17 +175,30 @@ fun main(args: Array<String>) {
 
     // !! not null assumption
     val strNotNull: String? = "This isn't null"
-    strNotNull!!.uppercase() //we saying we are sure it's not null
+    strNotNull!!.uppercase() //we're saying we are sure it's not null
 
     val strNull: String? = null
-//    strNull!!.uppercase() we saying we are sure it's not null - it's going to throw a null pointer exception
+//    strNull!!.uppercase() we're saying we are sure it's not null - it's going to throw a null pointer exception
 
     strNull?.let { printText(it) } // let this happen is strNull is not null
+
+    if (strNull != null) { // this is the same as above
+        printText(strNull)
+    }
 
     val strNotNullable: String = "Not nullable"
     println(strNull == strNotNullable) // it allows to do that because == is a safe operator. This doesn't throw a null pointer exception
 
-    
+    val nullableInts = arrayOfNulls<Int?>(5) // we don't need the ? here
+    for (i in nullableInts) {
+        println(i)
+    }
+    println(nullableInts[3].toString()) //also null
+
+    val number3: Int? = null
+    println(number3.toString()) // we don't get null pointer exception
+
+
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
