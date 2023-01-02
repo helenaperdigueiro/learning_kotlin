@@ -56,3 +56,4 @@ fun String.upperFirstAndLast2(): String { //extension function
     return upperFirst.substring(0, upperFirst.length - 1) +
             upperFirst.substring((upperFirst.length - 1), upperFirst.length).uppercase()
 }
+
